@@ -47,5 +47,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# superpowers
+# AI tooling / agent artifacts
 .superpowers/
+.claude/
+.cursor/
+.aider*
+.windsurfrules
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+docs/superpowers/
