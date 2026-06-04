@@ -261,6 +261,13 @@ export function ProductForm({
           <button
             type="submit"
             formAction={deleteAction}
+            onClick={(e) => {
+              if (
+                !window.confirm("Delete this product? This cannot be undone.")
+              ) {
+                e.preventDefault();
+              }
+            }}
             className="rounded-full border border-red-400/40 px-6 py-3 font-semibold text-red-400 transition hover:bg-red-400/10"
           >
             Delete

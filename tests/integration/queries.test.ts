@@ -2,18 +2,15 @@ import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import { prisma } from "@/lib/prisma";
 import { getCategories, getProductBySlug, getFeaturedProducts } from "@/lib/queries";
 
-let createdId: string;
-
 beforeAll(async () => {
   await prisma.product.deleteMany({ where: { slug: "test-cotton-wick" } });
   const cat = await prisma.category.findFirstOrThrow();
-  const p = await prisma.product.create({
+  await prisma.product.create({
     data: {
       slug: "test-cotton-wick", name: "Test Cotton Wick", description: "desc",
       basePrice: 60, isFeatured: true, isActive: true, categoryId: cat.id,
     },
   });
-  createdId = p.id;
 });
 
 afterAll(async () => {
