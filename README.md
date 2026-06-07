@@ -17,11 +17,23 @@ Catalog and inquiry website for **Thilak Products**, a Sri Lankan maker of cotto
 ## 🧰 Tech stack
 
 - ▲ **Next.js 16** (App Router, Turbopack) + 🔷 **TypeScript**
-- 🎨 **Tailwind CSS v4** — warm/traditional theme with Cormorant Garamond + Mulish fonts
+- 🎨 **Tailwind CSS v4** — warm/traditional theme with Cormorant Garamond + Mulish fonts, featuring responsive light and premium obsidian-gold dark mode styles
 - 🟢 **Supabase** — Postgres database, Auth (admin login), and Storage (the `product-images` bucket)
 - △ **Prisma 7** with the `@prisma/adapter-pg` driver adapter (connection configured in `prisma.config.ts`)
 - 📧 **Resend** — transactional email for contact-form inquiries
 - 🧪 **Vitest** (unit + integration) and 🎭 **Playwright** (E2E)
+
+## 🎨 Premium Theme & Loading Experience
+
+The website features a highly polished user experience tailored for a traditional devotional brand:
+
+- **Redesigned Obsidian-Gold Dark Mode:** A luxurious dark theme featuring a deep, warm obsidian-charcoal backdrop (`#0b0a08`), soft warm ivory text (`#f7f1e6`), and glowing amber-gold accents (`#e8b765`). Cards feature interactive glowing hover shadows, and elements utilize theme-aware `bg-surface` variables for full compatibility.
+- **Micro-interactions:** Interactive elements feature smooth cubic-bezier transitions, golden hover states, and premium underline expand animations on navigation links.
+- **Sacred Diya Loading Screen:** An immersive, theme-synchronized introductory loading screen with:
+  - An organic SVG Diya (traditional oil lamp) with realistic dual-layered flickering flames.
+  - A glowing, rotating orbital ring around the brand logo.
+  - A simulated smooth progress bar mapping file/document hydration.
+  - Cycling loading status text displaying brand-specific crafting tasks (e.g. *Weaving traditional threads...*).
 
 ## ✅ Prerequisites
 
