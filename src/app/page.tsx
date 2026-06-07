@@ -164,7 +164,7 @@ export default async function Home() {
           ].map((item) => (
             <div
               key={item.title}
-              className="group rounded-xl border border-gold/15 bg-white p-8 text-center transition-all duration-300 hover:border-gold/30 hover:shadow-md"
+              className="group premium-card rounded-xl border border-gold/15 bg-surface p-8 text-center"
             >
               <div className="mx-auto flex h-14 w-14 items-center justify-between rounded-full bg-gold/5 text-3xl justify-center transition-all duration-300 group-hover:scale-110">
                 <span className="mx-auto">{item.emoji}</span>

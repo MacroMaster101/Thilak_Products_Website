@@ -20,7 +20,7 @@ export default async function ProductPage({
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         {/* Images */}
         <div>
-          <div className="relative overflow-hidden rounded-2xl border border-gold/15 bg-white p-2 shadow-sm">
+          <div className="relative overflow-hidden rounded-2xl border border-gold/15 bg-surface p-2 shadow-sm">
             <div className="h-96 overflow-hidden rounded-xl bg-surface-2 sm:h-[450px]">
               {product.images[0] ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -41,7 +41,7 @@ export default async function ProductPage({
               {product.images.slice(1).map((src, i) => (
                 <div
                   key={i}
-                  className="h-20 w-20 overflow-hidden rounded-xl border border-gold/10 bg-white p-1 shadow-sm transition-transform duration-300 hover:scale-105"
+                  className="h-20 w-20 overflow-hidden rounded-xl border border-gold/10 bg-surface p-1 shadow-sm transition-transform duration-300 hover:scale-105"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -78,7 +78,7 @@ export default async function ProductPage({
               <span className="text-xs font-semibold uppercase tracking-wider text-gold">
                 Available Variations & Sizes
               </span>
-              <ul className="mt-3 divide-y divide-gold/10 border-y border-gold/10 bg-white/50 px-4 rounded-xl border">
+              <ul className="mt-3 divide-y divide-gold/10 border-y border-gold/10 bg-surface/50 px-4 rounded-xl border">
                 {product.variants.map((variant) => (
                   <li
                     key={variant.id}
