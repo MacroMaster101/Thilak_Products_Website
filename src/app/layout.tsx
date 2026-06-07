@@ -3,6 +3,9 @@ import { Cormorant_Garamond, Mulish } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { ThemeProvider } from "@/components/site/ThemeProvider";
+import { LoadingScreen } from "@/components/site/LoadingScreen";
+import { themeInitScript } from "@/lib/theme";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display-serif",
@@ -31,12 +34,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${cormorant.variable} ${mulish.variable} antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-screen flex flex-col">
-        <Header />
-        <div className="flex-1 flex flex-col">{children}</div>
-        <Footer />
+        <ThemeProvider>
+          <LoadingScreen />
+          <Header />
+          <div className="flex-1 flex flex-col">{children}</div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
