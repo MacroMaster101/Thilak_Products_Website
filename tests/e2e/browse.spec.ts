@@ -38,7 +38,7 @@ test("homepage shows shop-by-type categories", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText("Shop by Type")).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Cotton Wick" })
+    page.locator('a[href="/category/cotton-wick"]').first()
   ).toBeVisible();
 });
 

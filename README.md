@@ -1,23 +1,35 @@
-# Thilak Products
+# 🪔 Thilak Products
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Prisma-7-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
+  <img src="https://img.shields.io/badge/Resend-000000?style=for-the-badge&logo=resend&logoColor=white" alt="Resend" />
+  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" />
+  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
 
 Catalog and inquiry website for **Thilak Products**, a Sri Lankan maker of cotton wicks, oil lamp wicks, and floating wicks. The public site lets customers browse products by type, view product details with prices in Rs, and inquire via WhatsApp, phone, email, or a contact form (no online checkout). A Supabase-authenticated admin area lets the store owner create, edit, and manage products and their images.
 
-## Tech stack
+## 🧰 Tech stack
 
-- **Next.js 16** (App Router, Turbopack) + **TypeScript**
-- **Tailwind CSS v4** — warm/traditional theme with Cormorant Garamond + Mulish fonts
-- **Supabase** — Postgres database, Auth (admin login), and Storage (the `product-images` bucket)
-- **Prisma 7** with the `@prisma/adapter-pg` driver adapter (connection configured in `prisma.config.ts`)
-- **Resend** — transactional email for contact-form inquiries
-- **Vitest** (unit + integration) and **Playwright** (E2E)
+- ▲ **Next.js 16** (App Router, Turbopack) + 🔷 **TypeScript**
+- 🎨 **Tailwind CSS v4** — warm/traditional theme with Cormorant Garamond + Mulish fonts
+- 🟢 **Supabase** — Postgres database, Auth (admin login), and Storage (the `product-images` bucket)
+- △ **Prisma 7** with the `@prisma/adapter-pg` driver adapter (connection configured in `prisma.config.ts`)
+- 📧 **Resend** — transactional email for contact-form inquiries
+- 🧪 **Vitest** (unit + integration) and 🎭 **Playwright** (E2E)
 
-## Prerequisites
+## ✅ Prerequisites
 
 - **Node.js 18+** (this project is developed on Node 24)
 - A **Supabase** project (free tier hosts the Postgres DB, Auth, and Storage)
 - Optionally, a **Resend** account if you want contact-form inquiries emailed to you
 
-## Setup
+## 🚀 Setup
 
 1. **Install dependencies**
 
@@ -55,7 +67,7 @@ Catalog and inquiry website for **Thilak Products**, a Sri Lankan maker of cotto
 
    ```bash
    npx prisma migrate dev   # or: npm run db:migrate — creates the tables
-   npm run db:seed          # seeds the 3 product categories
+   npm run db:seed          # seeds the 3 product categories and sample products
    ```
 
 5. **Run the app**
@@ -66,7 +78,7 @@ Catalog and inquiry website for **Thilak Products**, a Sri Lankan maker of cotto
 
    Open <http://localhost:3000>. The admin area lives at `/admin` — log in with the Supabase user you created above.
 
-## Scripts
+## 📜 Scripts
 
 | Script | What it does |
 | --- | --- |
@@ -78,15 +90,15 @@ Catalog and inquiry website for **Thilak Products**, a Sri Lankan maker of cotto
 | `npm run test:watch` | Run Vitest in watch mode. |
 | `npm run test:e2e` | Run the Playwright E2E suite. |
 | `npm run db:migrate` | `prisma migrate dev` — apply migrations in development. |
-| `npm run db:seed` | Seed the category data. |
+| `npm run db:seed` | Seed the category and sample product data. |
 | `npm run db:generate` | Generate the Prisma client. |
 
-## Testing
+## 🧪 Testing
 
 - **Unit + integration:** `npm test`. The integration tests run against the configured `DATABASE_URL`, so a reachable database is required.
 - **E2E:** `npm run test:e2e`. Playwright starts the dev server automatically. The admin spec only runs when `E2E_ADMIN_EMAIL` and `E2E_ADMIN_PASSWORD` are set in the environment; otherwise those tests are skipped.
 
-## Deployment
+## ☁️ Deployment
 
 Deploy on **Vercel**:
 
@@ -94,7 +106,7 @@ Deploy on **Vercel**:
 - Supabase (free tier) hosts the database, Auth, and Storage.
 - Run production migrations with `npx prisma migrate deploy`.
 
-## Project structure
+## 📁 Project structure
 
 ```
 src/app/             App Router routes — public pages (/, /products, /category/[slug],
@@ -107,7 +119,7 @@ src/lib/             Helpers: prisma client, Supabase clients, auth (requireUser
 prisma/              Prisma schema, migrations, and the category seed script
 ```
 
-## Prisma 7 notes
+## △ Prisma 7 notes
 
 - The database connection is configured in `prisma.config.ts`, which manually loads `.env.local` (preferred) or `.env` so the Prisma CLI uses the same `DATABASE_URL` as the app.
 - The Prisma client uses the `@prisma/adapter-pg` driver adapter over the `pg` Postgres driver.

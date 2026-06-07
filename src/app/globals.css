@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #1c0f08;
-  --color-surface: #2b1810;
-  --color-surface-2: #3a2113;
-  --color-gold: #c9821f;
-  --color-cream: #f3d9a6;
-  --color-muted: #cbb189;
+  --color-bg: #fdfbf7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f1e5;
+  --color-gold: #b37e33;
+  --color-cream: #2c221a;
+  --color-muted: #6e6155;
   --color-whatsapp: #25d366;
 
   --font-display: var(--font-display-serif), "Cormorant Garamond", serif;
@@ -17,6 +17,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-cream);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -25,4 +26,24 @@ h3,
 h4,
 .font-display {
   font-family: var(--font-display);
+}
+
+::selection {
+  background-color: #f2ebd9;
+  color: #b37e33;
+}
+
+/* Custom micro-interactions and transitions */
+.transition-premium {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input, textarea, select {
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 0 3px rgba(179, 126, 51, 0.15);
 }
